@@ -3,7 +3,7 @@ import './App.css';
 import '../Header/Header';
 import TodoHeader from '../Header/Header';
 import TodoForm from '../TodoForm/TodoForm';
-import TodoList from '../TodoList/TodoItem/TodoItem';
+import TodoList from '../TodoList/TodoItem/TodoList';
 
 function App() {
   const [todo, setTodos] = useState([
@@ -11,6 +11,7 @@ function App() {
     { id: 2, text: '점심 먹기', completed: true },
     { id: 3, text: '운동하기', completed: false },
   ]);
+  console.log(todo);
 
   const addTodo = (text) => {
     const newTodo = { id: Date.now(), text, completed: false };

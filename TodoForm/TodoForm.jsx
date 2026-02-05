@@ -5,11 +5,11 @@ function TodoForm({ onAdd }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd(input);
-    setInput('');
+    setInput(''); // 입력창 초기화
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
     </form>
   );
@@ -22,4 +22,4 @@ export default TodoForm;
 그런데 여기서 text가 들어갈 자리가 객체 안에 있기 때문에 text 파라미터는 파라미터 값으로 key와 value를 받아와야함 
 (key는 text, value는 To내용 이런식으로 받아야 할 것 같음)*/
 
-// 브랜치를 왜 만드냐고? -> 구지 여기서 브랜치를 만들어서
+// 왜 handleSubmit함수가 안쓰일까?
