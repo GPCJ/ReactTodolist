@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import '../../src/TodoList.css';
 
 function TodoList({ items, 완료여부 }) {
   const [todo, setTodos] = useState(items);
-  // TodoForm에서 새로 Todo가 추가되면, App에서 그 상태 변화를 감지하고 그걸 TodoList에게 알려줘서(App에 특정 변수가 변하면 TodoList에서도 알 수 있는 방법이 있나?)
+  // 이제 Todo 추가 반영까지는 했는데 Todo리스트 개별 항목 디자인이 없는 상태, 삭제 기능도 없는 상태
   return items.map((item, index) => {
     return (
-      <div>
+      <div className="todo-card">
         <input type="checkbox" />
         <span>{item.text}</span>
       </div>
