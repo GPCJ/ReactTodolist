@@ -17,40 +17,23 @@ function App() {
     setTodos((prev) => [...prev, newTodo]);
   };
 
-  // const toggleTodo = (id) => {
-  //   setTodos(prev => )
-  // }
+  // 체크박스를 클릭하면 toggleTodo함수가 실행되고 map메서드가 Todo목록을 돌면서 체크한 Todo에 해당 하는 id를 가진 Todo에 완료여부를 반전한다(Not 연산한다) - map이 Todo목록을 순회하다가 사용자가 체크한 Todo를 만나면 해당 Todo의 완료 여부 반전
+  // 이 함수는 리스트 표시 하는 곳에 써야함
+  const toggleTodo = (id) => {
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
+    );
+  };
 
   return (
     <div className="todo-container">
       <TodoHeader />
       <TodoForm onAdd={addTodo} />
-      <TodoList items={todo} />
+      <TodoList items={todo} 완료여부={toggleTodo} />
     </div>
   );
 }
-
-// // 입력 컴포넌트
-// function TodoInput({ todo, setTodo }) {
-//   return (
-//     <>
-//       <input value={todo} onChange={(e) => setTodo(e.target.value)} />
-//     </>
-//   );
-// }
-
-// // 리스트화 컴포넌트
-// function TodoList({ todo }) {
-//   const items = [todo];
-//   return (
-//     <>
-//       <ul>
-//         {items.map((item, index) => {
-//           return <li key={index}>{item}</li>;
-//         })}
-//       </ul>
-//     </>
-//   );
-// }
 
 export default App;
