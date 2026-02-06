@@ -34,7 +34,7 @@ function App() {
     <div className="todo-container">
       <TodoHeader />
       <TodoForm onAdd={addTodo} />
-      <TodoList items={todos} 완료여부={toggleTodo} />
+      <TodoList items={todos} onToggleTodo={toggleTodo} />
     </div>
   );
 }
