@@ -3,8 +3,8 @@ import { useState } from 'react';
 function TodoForm({ onAdd }) {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (inputTodo) => {
-    inputTodo.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     try {
       if (!input.trim()) throw new Error('내용을 입력해주세요');
 

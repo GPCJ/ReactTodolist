@@ -3,16 +3,13 @@ import './App.css';
 import '../Header/Header';
 import TodoHeader from '../Header/Header';
 import TodoForm from '../TodoForm/TodoForm';
-import TodoList from '../TodoList/TodoItem/TodoList';
+import TodoList from '../TodoList/TodoItem/TodoItem';
 import TodoStats from '../Stats/TodoStats';
+import TodoEmptyState from '../TodoList/EmptyState/TodoEmptySate';
 
 function App() {
   // Todo리스트 상태
-  const [todos, setTodos] = useState([
-    { id: 1, text: '리액트 공부하기', completed: false },
-    { id: 2, text: '점심 먹기', completed: true },
-    { id: 3, text: '운동하기', completed: false },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   // 추가
   const addTodo = (text) => {
@@ -40,6 +37,7 @@ function App() {
       <TodoForm onAdd={addTodo} />
       <TodoStats items={todos} />
       <TodoList items={todos} onToggleTodo={toggleTodo} delItems={deleteTodo} />
+      <TodoEmptyState items={todos} />
     </div>
   );
 }
