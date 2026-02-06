@@ -12,16 +12,19 @@ function App() {
     { id: 2, text: '점심 먹기', completed: true },
     { id: 3, text: '운동하기', completed: false },
   ]);
-  console.log(todos);
 
+  // 추가
   const addTodo = (text) => {
     const newTodo = { id: Date.now(), text, completed: false };
     setTodos((prev) => [...prev, newTodo]);
   };
 
-  // 체크박스를 클릭하면 toggleTodo함수가 실행되고 map메서드가 Todo목록을 돌면서 체크한 Todo에 해당 하는 id를 가진 Todo에 완료여부를 반전한다(Not 연산한다) - map이 Todo목록을 순회하다가 사용자가 체크한 Todo를 만나면 해당 Todo의 완료 여부 반전
-  // 이 함수는 리스트 표시 하는 곳에 써야함
-  // prev는 최신 Todo리스트, todo는 해당 리스트의 요소
+  // 삭제
+  const deleteTodo = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
+  // 토글
   const toggleTodo = (id) => {
     setTodos((prev) =>
       prev.map((todo) =>
@@ -34,7 +37,7 @@ function App() {
     <div className="todo-container">
       <TodoHeader />
       <TodoForm onAdd={addTodo} />
-      <TodoList items={todos} onToggleTodo={toggleTodo} />
+      <TodoList items={todos} onToggleTodo={toggleTodo} delItems={deleteTodo} />
     </div>
   );
 }

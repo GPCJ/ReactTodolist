@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+#root h1,
+h2 {
+  margin: 15px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +44,34 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* TodoList스타일 */
+.todo-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin: 10px 0px;
+}
+
+input[type='checkbox'] {
+  /* 브라우저 기본 스타일링 일부 허용/해제 */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-card span {
+  flex: 1;
+  color: white;
+}
+
+.todo-card button {
+  background: none;
+  border: none;
+  color: #d45757; /* 삭제 느낌 나는 빨간색 */
+  cursor: pointer;
 }
