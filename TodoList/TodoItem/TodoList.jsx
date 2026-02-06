@@ -19,7 +19,7 @@ function TodoList({ items, 완료여부 }) {
           // 아하 이 문제는 자식 컴포넌트에서 체크 값이 바뀌면 바로 부모 컴포넌트로 가서 바뀐 상태로 렌더링 하고 해야겠네
           // 그런데 그 바뀌 값이 표시 되는 코드가 자식 컴포넌트에 있으니까 자식 컴포넌트도 상태 관리를 안예 안하면 안됨...
           checked={item.completed}
-          onChange={(e) => setIsCompleted(handleCheck(!e.target.checked))}
+          onChange={(e) => setIsCompleted(e.target.checked)}
         />
         <span>{item.text}</span>
       </div>
