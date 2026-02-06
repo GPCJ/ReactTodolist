@@ -46,6 +46,12 @@ h2 {
   color: #888;
 }
 
+/* TodoForm스타일 */
+.input-todo {
+  width: 250px;
+  height: 30px;
+}
+
 /* TodoList스타일 */
 .todo-card {
   display: flex;
@@ -58,7 +64,6 @@ h2 {
 }
 
 input[type='checkbox'] {
-  /* 브라우저 기본 스타일링 일부 허용/해제 */
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -72,6 +77,6 @@ input[type='checkbox'] {
 .todo-card button {
   background: none;
   border: none;
-  color: #d45757; /* 삭제 느낌 나는 빨간색 */
+  color: #d45757;
   cursor: pointer;
 }
