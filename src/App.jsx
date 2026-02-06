@@ -4,6 +4,7 @@ import '../Header/Header';
 import TodoHeader from '../Header/Header';
 import TodoForm from '../TodoForm/TodoForm';
 import TodoList from '../TodoList/TodoItem/TodoList';
+import TodoStats from '../Stats/TodoStats';
 
 function App() {
   // Todo리스트 상태
@@ -37,6 +38,7 @@ function App() {
     <div className="todo-container">
       <TodoHeader />
       <TodoForm onAdd={addTodo} />
+      <TodoStats items={todos} />
       <TodoList items={todos} onToggleTodo={toggleTodo} delItems={deleteTodo} />
     </div>
   );

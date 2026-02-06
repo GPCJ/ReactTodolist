@@ -4,7 +4,7 @@ function TodoList({ items, onToggleTodo, delItems }) {
   // 핸들러 함수 선언 없이 이벤트 속성에서 바로 부모 컴포넌트로 반환
   return items.map((item) => {
     return (
-      <div className="todo-card" key={item.id}>
+      <div className="todo-info" key={item.id}>
         <input
           type="checkbox"
           checked={item.completed}
