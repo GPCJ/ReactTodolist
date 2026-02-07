@@ -112,10 +112,6 @@ input[type='checkbox'] {
 
 /* TodoEmptyState스타일 */
 .empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 40px;
   color: #888;
   text-align: center;
@@ -123,5 +119,4 @@ input[type='checkbox'] {
 
 .empty-state__icon {
   font-size: 3rem;
-  margin-bottom: 10px;
 }
