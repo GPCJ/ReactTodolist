@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import '../Header/Header';
 import TodoHeader from '../Header/Header';
-import TodoForm from '../TodoForm/TodoForm';
+import TodoInput from '../TodoForm/TodoInput';
 import TodoList from '../TodoList/TodoItem/TodoItem';
 import TodoStats from '../Stats/TodoStats';
 import TodoEmptyState from '../TodoList/EmptyState/TodoEmptySate';
@@ -34,10 +34,20 @@ function App() {
   return (
     <div className="todo-container">
       <TodoHeader />
-      <TodoForm onAdd={addTodo} />
-      <TodoStats items={todos} />
-      <TodoList items={todos} onToggleTodo={toggleTodo} delItems={deleteTodo} />
-      <TodoEmptyState items={todos} />
+      <TodoInput onAdd={addTodo} />
+      {/* Todo리스트에 아무 Todo가 없다면 진행률과 Todo 요소를 표시하지 않고 빈 Todo 알림 컴포넌트를 렌더링 */}
+      {todos.length === 0 ? (
+        <TodoEmptyState />
+      ) : (
+        <>
+          <TodoStats items={todos} />
+          <TodoList
+            items={todos}
+            onToggleTodo={toggleTodo}
+            delItems={deleteTodo}
+          />
+        </>
+      )}
     </div>
   );
 }
