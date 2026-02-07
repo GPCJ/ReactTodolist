@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+#root h1,
+h2 {
+  margin: 15px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +44,79 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* TodoForm스타일 */
+.input-todo {
+  width: 250px;
+  height: 30px;
+}
+
+.input-todo.error {
+  border: 1px solid red;
+  outline: none;
+}
+
+.input-todo.error::placeholder {
+  color: red;
+}
+
+/* TodoList스타일 */
+.todo-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin: 10px 0px;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-info span {
+  flex: 1;
+  color: white;
+}
+
+.todo-info button {
+  background: none;
+  border: none;
+  color: #d45757;
+  cursor: pointer;
+}
+
+/* TodoStats스타일 */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 90px;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin: 10px 0px;
+}
+
+.progress-info__count {
+  flex: 1;
+}
+
+.progress-info__percent {
+  flex: 1;
+}
+
+/* TodoEmptyState스타일 */
+.empty-state {
+  padding: 40px;
+  color: #888;
+  text-align: center;
+}
+
+.empty-state__icon {
+  font-size: 3rem;
 }
