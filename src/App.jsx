@@ -12,14 +12,21 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   // 추가
-  const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text, completed: false };
+  const addTodo = (newText) => {
+    const newTodo = { id: Date.now(), text: newText, completed: false };
     setTodos((prev) => [...prev, newTodo]);
   };
 
   // 삭제
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
+  // 수정
+  const updateTodo = (id, newText) => {
+    setTodos((prev) =>
+      prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo)),
+    );
   };
 
   // 토글
@@ -45,6 +52,7 @@ function App() {
             items={todos}
             onToggleTodo={toggleTodo}
             delItems={deleteTodo}
+            onUpdate={updateTodo}
           />
         </>
       )}
