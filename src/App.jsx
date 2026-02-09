@@ -13,7 +13,12 @@ function App() {
 
   // 추가
   const addTodo = (newText) => {
-    const newTodo = { id: Date.now(), text: newText, completed: false };
+    const newTodo = {
+      id: Date.now(),
+      text: newText,
+      completed: false,
+      editing: false,
+    };
     setTodos((prev) => [...prev, newTodo]);
   };
 
