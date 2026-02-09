@@ -8,6 +8,9 @@ function TodoInput({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log('현재 입력값:', input);
+
     inputRef.current?.focus();
     try {
       // 입력 값이 공백이면 isError는 true가 됨
